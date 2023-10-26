@@ -17,8 +17,7 @@
 		<allure.version>2.24.0</allure.version>
 	</properties>
 	<dependencies>
-		<!--
-		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<!--https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
@@ -35,15 +34,13 @@
 			<artifactId>testng</artifactId>
 			<version>7.8.0</version>
 		</dependency>
-		<!--
-					https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<!--https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>5.2.4</version>
 		</dependency>
-		<!--
-					https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<!--https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
