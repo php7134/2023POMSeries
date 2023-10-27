@@ -4,7 +4,7 @@ public class NewPage {
 	
 	public void login()
 	{
-		System.out.println("test - login method");
+		System.out.println("php - login method");
 	}
 
 }
