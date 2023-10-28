@@ -34,7 +34,7 @@ public class LoginPage {
 	private By registerLink = By.linkText("Register");
 
 	// 3. public page actions/methods
-	@Step("getting login page title")
+	@Step("getting login page title.........")
 	public String getLoginPageTitle() {
 		return eleUtil.waitForTitleIsAndCpature(AppConstants.LOGIN_PAGE_TITLE_VALUE, AppConstants.SHORT_DEFAULT_WAIT);
 	}
