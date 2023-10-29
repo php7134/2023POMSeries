@@ -62,7 +62,7 @@ stage ('Publish Allure Reports')
         includeProperties: false,
         jdk:'',
         properties:[],
-        reportBuildPolicy: 'Always',
+        reportBuildPolicy:'Always',
         results:[[ path:'/allure-results' ]]
          ])
             
