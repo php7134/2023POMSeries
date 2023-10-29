@@ -16,8 +16,8 @@ pipeline
     steps
     {
     
-    git 'https://github.com/jglick/simple-maven-project-with-tests'
-    sh "mvn -Dmaven.test.failure.ignore=true clean package"
+    git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+    bat "mvn -Dmaven.test.failure.ignore=true clean package"
 }
 post
 {
@@ -48,7 +48,7 @@ stage ("Deploy to QA")
     catchError(buildResult: 'SUCCESS', stageResult:'FAILURE'){
                                 
                                 git 'https://github.com/php7134/2023POMSeries.git'
-                                sh "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_regression.xml"
+                                bat "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_regression.xml"
                             }
 
 }
@@ -93,7 +93,7 @@ stage('Sanity Automation Test'){
     steps{
      catchError(buildResult: 'SUCCESS', stageResult:'FAILURE'){
                                 git 'https://github.com/php7134/2023POMSeries.git'
-                                sh "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
+                                bat "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
 }
 }
 }
@@ -103,7 +103,7 @@ stage('publish sanity Extent Report')
     steps{
     catchError(buildResult: 'SUCCESS', stageResult:'FAILURE'){
                                 git 'https://github.com/php7134/2023POMSeries.git'
-                                sh "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
+                                bat "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
         
         }
     }
