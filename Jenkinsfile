@@ -73,13 +73,13 @@ stage('Publish Extent Report')
 {
     
     steps
-    { publishHTML([allowMissing:false,
+    { publishHTML([allowMissing: false,
                   alwaysLinkToLastBuild: false,
                   keepAll: true,
-                  reportDir:'reports',
-                  reportFiles:'TestExecutionReport.html',
-                  reportName:'HTML Regression Extent Report',
-                  reportTitle:''])
+                  reportDir: 'reports',
+                  reportFiles: 'TestExecutionReport.html',
+                  reportName: 'HTML Regression Extent Report',
+                  reportTitles: ''])
                   
                   }        
 }
@@ -113,13 +113,13 @@ stage('Publish Sanity Extent Report')
 {
     
     steps
-    { publishHTML([allowMissing:false,
+    { publishHTML([allowMissing: false,
                   alwaysLinkToLastBuild: false,
                   keepAll: true,
-                  reportDir:'reports',
-                  reportFiles:'TestExecutionReport.html',
-                  reportName:'HTML Sanity Extent Report',
-                  reportTitle:''])
+                  reportDir: 'reports',
+                  reportFiles: 'TestExecutionReport.html',
+                  reportName: 'HTML Sanity Extent Report',
+                  reportTitles: ''])
                   
                   }        
 }
