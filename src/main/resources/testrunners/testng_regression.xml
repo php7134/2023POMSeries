@@ -31,14 +31,14 @@
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
 	</test>
-
+ <!-- 
 	<test name="Search Test">
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class name="com.qa.opencart.tests.SearchTest" />
 		</classes>
 	</test>
-	<!-- 	<test name="Product Info Test">
+		<test name="Product Info Test">
 		<parameter name="browser" value="edge"></parameter>
 		<classes>
 			<class name="com.qa.opencart.tests.ProductPageInfoTest" />
