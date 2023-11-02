@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.log4testng.Logger;
 
 import com.qa.opencart.frameworkexceptions.FrameException;
 
@@ -27,10 +29,14 @@ public class DriverFactory {
 
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 
+	public static final Logger log = Logger.getLogger(DriverFactory.class);
+	// info,warn,error,fatal
+
 	public WebDriver initDriver(Properties prop) {
 
 		String browserName = prop.getProperty("browser").trim();
-		System.out.println("browser name is: " + browserName);
+		System.out.println("Browser name is: " + browserName);
+		log.info("Browser name is :" + browserName);
 
 		highlightElement = prop.getProperty("highlight");
 		optionsManager = new OptionsManager(prop);
@@ -44,6 +50,7 @@ public class DriverFactory {
 			} else {
 				// run on local
 				System.out.println("Running tests on local");
+				log.info("Running tests on local");
 				tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 			}
 
@@ -55,6 +62,7 @@ public class DriverFactory {
 			} else {
 				// run on local
 				System.out.println("Running tests on local");
+				log.info("Running tests on local");
 				tlDriver.set(new EdgeDriver(optionsManager.getEdgeOptions()));
 			}
 			break;
@@ -65,12 +73,14 @@ public class DriverFactory {
 			} else {
 				// run on local
 				System.out.println("Running tests on local");
+				log.info("Running tests on local");
 				tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
 			}
 
 			break;
 		default:
 			System.out.println("please pass the right browser....." + browserName);
+			log.error("please pass the right browser....." + browserName);
 			throw new FrameException("NOBROWSERFOUNDEXCEPTION");
 		}
 		getDriver().manage().deleteAllCookies();
@@ -157,6 +167,7 @@ public class DriverFactory {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		log.info("Properties are ====>" + prop);
 		return prop;
 
 	}
